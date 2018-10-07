@@ -1,0 +1,7 @@
+<import src="/pages/template/list-template.wxml"/>
+<view class="all">
+    <block wx:if="{{isBuy[index].lessonIsBuy}}" wx:for="{{kechengData}}" wx:key="{{index}}">
+      <template is="list-lesson" data="{{...item,index}}"/>
+    </block>
+
+</view>

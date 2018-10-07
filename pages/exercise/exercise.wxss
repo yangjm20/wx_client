@@ -1,0 +1,84 @@
+page{
+  height: 100%;
+  background: #F3F3F3;
+  display: flex;
+  flex-direction: column;
+}
+.box{
+    height:auto;
+    width:96%;
+    border-radius: 10rpx;
+    margin: auto;
+    margin-top: 20rpx;
+    background: #FFFF;
+}
+.weui-navbar{
+    position: relative;
+}
+
+.ziti0{
+    color:rgba(51, 51, 51, 0.527);
+    font-size:24rpx;
+    line-height: 78rpx;
+}
+.ziti{
+    color: rgb(13, 212, 146);
+    font-size:24rpx;
+    line-height: 78rpx;
+}
+
+.ff{
+    width:20%;
+    float:left;
+    text-align:center;
+}
+
+.weui-tab__panel{
+  width: 85%;
+  height: 90%;
+  margin-left: 20rpx;
+}
+
+.weui_title{
+  font-size: 35rpx;
+}
+.weui_title_img{
+  margin-top: 20rpx;
+}
+.weui_options{
+  display: flex;
+  font-size: 30rpx;
+  height: 90%;
+  line-height: 85rpx;
+  margin-top:25rpx;
+  margin-bottom: 50rpx;
+}
+
+.weui_optins_{
+  display: flex;
+   align-items: center;
+}
+
+.pags_bottom{
+  height: 100rpx;
+  background: #FFF;
+  margin-bottom: 0rpx;
+  text-align: center;
+  
+}
+
+.pages_bottom_txt{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: rgb(67, 192, 115)
+}
+
+.pages_bottom_txt_2{
+  margin-left: 200rpx;
+}
+.textA{
+  background: rgb(117, 172, 138);
+  border:1rpx solid;
+}
+

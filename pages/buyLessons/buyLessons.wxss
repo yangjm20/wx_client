@@ -1,0 +1,8 @@
+@import "/pages/template/list-template.wxss";
+page{
+    background-color: #eee;
+}
+.all{
+    padding-top:45rpx;
+    padding-left:24rpx;
+}

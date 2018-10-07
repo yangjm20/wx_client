@@ -1,0 +1,12 @@
+<!--pages/errorExercise/errorExercise.wxml-->
+<view class="body" wx:for="{{errors}}">
+  <view class="content">
+      <text class="title">{{lesson[item.lessonId].lessonName}}</text>
+      <text class="subtitle"> {{lesson[item.lessonId].lesson[item.sessionId].sectionName}}</text>
+      <text class='subtitle_'>{{lesson[item.lessonId].lesson[item.sessionId].section[item.vodieId].math_name}}</text>
+      <view class='time_action'>
+          <text class='time'>{{item.time}}</text>
+          <text class='action' bindtap='toErrorDetail' data-id="{{item.lessonId+item.sessionId+item.vodieId}}">共错{{item.errorIndex.length}}道题    查看错题</text>
+      </view>
+  </view>
+</view>

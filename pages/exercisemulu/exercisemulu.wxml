@@ -1,0 +1,39 @@
+<view class="body">
+  <view class="body_mulu">
+    <text class="body_mulu_txt">目录</text>
+  </view>
+
+  <view class="content">
+
+    <view class="section" wx:for="{{lessons}}" wx:for-item="item" wx:for-index='sessionIdx'>
+      
+          <view class="section_" catchtap="listTap" data-parentindex="{{sessionIdx}}">
+              <text class="content_section_title">{{item.sectionName}}</text>
+              <image class='icon_down {{item.show&&"icon_down_rotate"}}' src='../../images/icon_down.png'></image>
+          </view>
+
+          <scroll-view scroll-y="true" scroll-with-animation="true">
+               <view wx:if="{{item.show}}" class="content_section_vodie" wx:for="{{item.section}}" wx:for-item="itemBody" catchTap="listItemTap"  data-parentindex='{{parentIndex}}' wx:for-index="idx">
+         
+                <view class="content_section_mathName">
+                  <text>{{itemBody.math_name}}</text>
+                </view>
+              
+              
+                <block wx:if="{{!isExercised[lessonId].sessions[sessionIdx].vodies[idx].isExercised}}">
+                  <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>练习</button>
+                </block>
+
+                <block  wx:else>
+                  <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex1 {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>重做</button>
+                </block>
+                
+
+          </view>
+          </scroll-view>
+         
+
+    </view>
+
+  </view>
+</view>

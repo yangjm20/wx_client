@@ -1,0 +1,79 @@
+<!--pages/result/result.wxml-->
+<view class='body'>
+    <view class='top'>
+        <view class='topTitle'>
+          <image class='topimg' src='../../images/bang.png'></image>
+          <text class='toptxt'>恭喜你，本次成绩为{{scoreStudent}}分</text>
+        </view>
+        <view class='topButtons'>
+          <button class='topBtn' catchtap='return_index'>返回首页</button>
+          <button class='topBtn'>再来一次</button>
+        </view>
+    </view>
+
+    <view class='middle'>
+      
+        <view  class="middle_title">
+          <text class="middle_title_">答案解析</text>
+        </view>
+        
+
+        <view class='middle_content'>
+            <view class="middle_content_title">
+              <text>{{lessons[sessionId].sectionName}}</text>
+              <text>{{lessons[sessionId].section[id].math_name}}</text>
+            </view>
+         
+            <view>
+                <block class="middle_content_biaoti" wx:for="{{tabs}}" wx:key="*this">
+                
+                    <text id="{{index}}" class="middle_content_biaoti_ {{activeIndex==index?'ziti':'ziti0'}}" bindtap="tabClick">{{item}}</text>
+                 
+                  
+                </block>
+            </view>
+         
+
+            
+                <view class="middle_content_biaoti_bottom">
+                  <text class="middle_answer">您的答案是  <text class="A">{{userAnswerOptions[activeIndex]}}</text>  正确答案是  <text class="B">{{answerOptions[activeIndex]}}</text></text>
+                </view>
+          
+
+        </view>
+
+       
+          <view class="middle_bottom">
+              <text class="middle_bottom_title">{{tabs[activeIndex]}}解析</text>
+              <text class="middle_bottom_content">解析:</text>
+              <image src="{{answers[activeIndex].analysis}}"></image>
+          </view>
+          
+      
+
+    </view>
+
+    <view class='bottom'>
+     
+      <view  wx:for="{{examinations}}" wx:for-index="index">
+
+        <view hidden="{{activeIndex != index}}">
+            <view class='bottom_title'>
+              
+              <image mode='widthFix' src="{{item.questions[0].question}}"></image>
+            </view>
+
+            <radio-group class="radio-group">
+            
+              <radio class="weui_optins_" wx:for="{{item.questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
+                <view class='bottom_content'><image mode='widthFix' src="{{item.option}}"> </image></view>
+              </radio>
+
+            </radio-group>
+            
+        </view>
+            
+      </view>
+     
+    </view>
+</view>

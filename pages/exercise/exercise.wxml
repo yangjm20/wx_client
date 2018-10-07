@@ -1,0 +1,55 @@
+<!--pages/exercise/exercise.wxml-->
+
+<view class="box">
+
+  <view class="weui-tab">
+       
+       <view class="weui-navbar">
+
+            <block wx:for="{{tabs}}" wx:key="*this">
+                      <view id="{{index}}" class="ff weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}"
+                            bindtap="tabClick">
+                          <view class="weui-navbar__title {{activeIndex==index?'ziti':'ziti0'}}">{{item}}</view>
+                      </view>
+            </block>
+        </view>
+
+        <view class="weui-tab__panel bao" wx:for="{{examinations}}" wx:for-index="index" >
+            <view  class="weui-tab__content" hidden="{{activeIndex != index}}">
+              <view class="weui_title">
+                <view class="weui_title_">
+                 
+                  <image class="weui_title_img" mode='widthFix'src='{{item.questions[0].question}}'></image>
+                </view>
+                
+              </view>
+
+              <radio-group class="radio-group" bindchange="radioChange">
+
+                  <radio class="weui_options" wx:for="{{item.questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
+                    <view class="weui_optins_">
+                      <text class="weui_options_op"></text>
+                      <image mode='widthFix' src='{{item.option}}'></image>
+                    </view>
+                  </radio>
+              </radio-group>
+              
+            </view>
+        </view>
+  </view>
+ 
+</view>
+
+<view class="pags_bottom">
+    <view wx:if="{{activeIndex==0}}" class="pages_bottom_txt" bindtap='next_examination' data-tid="{{activeIndex}}">下一题 》 </view>
+
+    <view wx:elif="{{activeIndex==4}}" class="pages_bottom_txt" data-tid="{{activeIndex}}">
+        <text class="pages_bottom_txt_1" bindtap='pre_examination'>《 上一题</text>
+        <text class="pages_bottom_txt_2" bindtap="submitHandle">提交 》</text>
+    </view>
+
+    <view wx:else class="pages_bottom_txt"data-tid="{{activeIndex}}">  
+        <text class="pages_bottom_txt_1" bindtap='pre_examination'>《 上一题</text>
+        <text class="pages_bottom_txt_2" bindtap='next_examination'>下一题 》</text>
+    </view>
+</view>

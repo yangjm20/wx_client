@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/study/study",
+    "pages/errorExercise/errorExercise",
+    "pages/admin/lesson/lesson",
+    "pages/result/result",
+    "pages/exercisemulu/exercisemulu",
+    "pages/exercise/exercise",
+    "pages/kecheng/kecheng",
+    "pages/test/test",
+    "pages/mulu/mulu",
+    "pages/cellphone/cellphone",
+    "pages/mine/mine",
+    "pages/buy/buy",
+    "pages/admin/session/session",
+    "pages/admin/exercises/exercises",
+    "pages/admin/successAnswer/successAnswer",
+    "pages/errorDetail/errorDetail",
+    "pages/buyLessons/buyLessons"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#458B74",
+    "navigationBarTitleText": "Welcome To GaoShu",
+    "navigationBarTextStyle": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "lightpink",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon-首页@2x.png",
+        "selectedIconPath": "images/icon@2x.png"
+      },
+      {
+        "pagePath": "pages/kecheng/kecheng",
+        "text": "课程",
+        "iconPath": "/images/icon-课程@2x.png",
+        "selectedIconPath": "images/icon-课程-选中@2x.png"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "答题",
+        "iconPath": "/images/icon-学习@2x.png",
+        "selectedIconPath": "images/icon-学习-选中@2x.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/icon-我的@2x.png",
+        "selectedIconPath": "images/icon-我的-选中@2x.png"
+      }
+    ]
+  }
+}

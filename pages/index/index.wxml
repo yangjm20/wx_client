@@ -1,0 +1,44 @@
+<view class="luobo">
+    <swiper class="activity" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}" indicator-dots="{{indicatorDots}}" 
+            autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="155"/>
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class="hotCourse">
+    <viw class="topTitle">
+        <view class="left">
+            <image src="../../images/hot@2x.png"></image>
+            <text>热门课程</text>
+        </view>
+    </viw>
+    <view class="hotImg">
+        <scroll-view scroll-x style="width:100%">
+            <block wx:for="{{hotLesson}}">
+                <view style="background-color:{{item.color}}" class="item" bindtap='tiao' data-id="{{item.id}}">
+                    <text class="title">{{item.title}}</text>
+                    <text class="subtitle">{{item.subtitle}}</text>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>
+<view class="introVideo">
+    <viw class="topTitle">
+        <image src="../../images/intro@2x.png"></image>
+        <text>推荐视频</text>
+    </viw>
+    <view class="hotImg">
+
+        <view wx:for="{{recommendLesson}}" wx:for-item="recommend_item" class="singleBox" bindtap='tiao' data-id='{{recommend_item.id}}' data-id2='{{recommend_item.id2}}' data-id3='{{recommend_item.id3}}'>
+           <image src="../..{{recommend_item.url}}"></image>
+           <text class="title">{{recommend_item.name}}</text>
+           <text class="subtitle">{{recommend_item.watchAll}}</text>
+        </view>
+
+    </view>
+</view>
+

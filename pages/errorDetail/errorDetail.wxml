@@ -1,0 +1,61 @@
+<!--pages/result/result.wxml-->
+<view class='body'>
+  
+
+    <view class='middle'>
+      
+        <view  class="middle_title">
+          <text class="middle_title_">错题本</text>
+        </view>
+        
+
+        <view class='middle_content'>
+         
+            <view>
+                <block class="middle_content_biaoti" wx:for="{{errors.errorIndex}}" wx:key="*this">
+                
+                    <text id="{{item}}" class="middle_content_biaoti_ {{activeIndex==item?'ziti':'ziti0'}}" bindtap="tabClick">{{tabs[item]}}</text>
+                </block>
+            </view>
+
+                <view class="middle_content_biaoti_bottom">
+                  <text class="middle_answer">您的答案是  <text class="A">{{userAnswerOptions[activeIndex]}}</text>  正确答案是  <text class="B">{{answerOptions[activeIndex]}}</text></text>
+                </view>
+          
+
+        </view>
+
+       
+          <view class="middle_bottom">
+              <text class="middle_bottom_title">{{tabs[activeIndex]}}解析</text>
+              <text class="middle_bottom_content">解析:</text>
+              <image src="{{answers[activeIndex].analysis}}"></image>
+          </view>
+          
+      
+
+    </view>
+
+    <view class='bottom'>
+     
+      <view  wx:for="{{examinations}}" wx:for-index="index">
+
+        <view hidden="{{activeIndex != index}}">
+            <view class='bottom_title'>
+              <text class='bottom_title_'>【{{item.examinationType}}】{{item.questions[0].question}}</text>
+            </view>
+
+            <radio-group class="radio-group">
+            
+              <radio class="weui_optins_" wx:for="{{item.questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
+                <view class='bottom_content'>{{item.op}}----{{item.option}}</view>
+              </radio>
+
+            </radio-group>
+            
+        </view>
+            
+      </view>
+     
+    </view>
+</view>

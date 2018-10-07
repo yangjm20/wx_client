@@ -1,0 +1,15 @@
+<!--pages/login_/login_.wxml-->
+<view class="login_Container">
+  
+    
+    <image class='avatar' src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
+    <button bindgetuserinfo="handleUserInfo" open-type="getUserInfo" style='display:{{isShow?"block":"none"}}'>开启小程序授权</button>
+ 
+   
+  <text class="userName">欢迎来到高树吧</text>
+
+  <view catchtap='handleTap' class='goStudy' style='display:{{isShow?"none":"block"}}'>
+    <text catchtap='handleTap'>开启高树学习之旅</text>
+  </view>
+</view>

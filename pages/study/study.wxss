@@ -1,0 +1,40 @@
+.all{
+    padding-top:45rpx;
+    padding-left:24rpx;  
+}
+.all>.box{
+    height:145rpx;
+    line-height: 130rpx;
+    display:flex;  
+    margin-bottom: 72rpx; 
+   
+}
+.all>.box>image{
+    width:135rpx;
+    height:135rpx;
+    border-radius: 80rpx;
+    margin-left: 30rpx;
+}
+.all>.box>.lesson{
+    margin-left: 60rpx;
+    display: flex;
+    font-size:30rpx;
+    color:#333;
+    letter-spacing: 5rpx;
+}
+
+.all>.box>.btnStudy0{
+    height: 60rpx;
+    margin-top: 45rpx;
+    color:rgb(248, 249, 252);
+    background: rgb(4, 146, 182);
+    margin-right: 100rpx;
+    font-size:25rpx;
+}
+.all>.box>.btnStudy1{
+    height: 60rpx;
+    margin-top: 45rpx;
+    color:rgb(102, 109, 92);
+    margin-right: 100rpx;
+    font-size:25rpx;
+}

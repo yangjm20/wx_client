@@ -1,0 +1,59 @@
+.box{
+  width: 702rpx;
+  background-color: #fff;
+  height: 213rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 28rpx;
+  padding: 31rpx 39rpx 34rpx;
+}
+
+.avator{
+  width: 151rpx;
+  height: 151rpx;
+  margin-right: 45rpx;
+  border-radius: 100rpx;
+}
+
+.right{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  color: #333;
+  align-items: center;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.xue{
+    color:#A2A2A2;
+    font-size:22rpx;
+}
+
+.btn{
+    margin-right: 80rpx;
+    width:154rpx;
+    height:50rpx;
+    background:#FF547C;
+    border-radius:6rpx;
+    color:#fff;
+    line-height: 50rpx;
+    font-size:21rpx;
+}
+
+.btn1{
+
+    margin-right: 80rpx;
+    width:154rpx;
+    height:50rpx;
+    border-radius:6rpx;
+    color:rgb(102, 109, 92);
+    line-height: 50rpx;
+    font-size:21rpx;
+}

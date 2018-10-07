@@ -1,0 +1,18 @@
+<template name="list-lesson">
+    <view class="box">
+        <image src="../{{lujing}}" class='avator'></image>
+       
+        <view class="right">
+            <view class="content">
+             
+                <text>{{title}}</text>
+                <text class="xue">共{{subtitle}}节课程</text>
+            </view>
+
+             <button wx:if="{{flag ||!flag}}" bind:tap="tiao" data-lessonid="{{index}}">上传习题及答案</button>
+                
+                <button  wx:else style="background-color:lightgray">人数满额</button>              
+               
+        </view>
+    </view>
+</template>

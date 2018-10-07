@@ -1,0 +1,24 @@
+<template name="list-lesson">
+    <view class="box">
+        <image src="{{lujing}}" class='avator'></image>
+        <view class="right">
+            <view class="content">
+                <text>{{title}}</text>
+                <text class="xue">共{{subtitle}}节课程</text>
+            </view>
+
+
+<block wx:if="{{flag}}">
+    <button class="btn" bind:tap="tiao" data-lessonid="{{index}}">观看视频</button>
+</block>
+
+<block wx:else>
+    <button class="btn1">敬请期待</button>
+</block>
+             
+                
+                         
+
+        </view>
+    </view>
+</template>

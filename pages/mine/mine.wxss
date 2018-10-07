@@ -1,0 +1,136 @@
+/* pages/mine/mine.wxss */
+page{
+    height: 100%;
+    background-color: #eee;
+}
+
+.body{
+  height: auto;
+}
+
+.tou{
+    background-color: rgb(10, 37, 28);
+    height: 230rpx;
+    margin: auto;
+    box-sizing: border-box;
+    padding-top:40rpx;
+    padding-bottom: 20rpx;
+    display:flex;
+    flex-direction: column;   
+    align-items: center; 
+}
+
+.tou>image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.tou>text{
+    margin-top: 30rpx;
+    font-size:28rpx;
+    color:#FFF;    
+}
+
+
+
+.content{
+    margin: auto;
+    width:90%;
+    margin-top: 30rpx;
+    height: auto;
+    padding: 20rpx;
+    display:flex;
+    flex-direction: column;
+    color:#333333;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+.content>.cell{
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    align-items: center;
+    font-size: 22rpx;  
+    
+}
+.content>.cell>image{
+  float: right; 
+  margin-right: 50rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.error{
+    margin: auto;
+    width:90%;
+    margin-top: 30rpx;
+    height: auto;
+    padding: 20rpx;
+    color: #333333;
+    background-color: #fff;
+    border-radius: 10rpx;
+    font-size: 22rpx;
+}
+.error>text{
+  margin-left: 20rpx;
+}
+
+.error>image{
+  float: right; 
+  margin-right: 50rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.history{
+    margin: auto;
+    width:90%;
+    margin-top: 30rpx;
+    height: auto;
+    padding: 20rpx;
+    color: #333333;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+.history_title{
+  margin-left: 20rpx;
+  font-size: 22rpx;
+}
+.history_content{
+  display: flex;
+  flex-direction: column;
+}
+
+.history_content_title {
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #eee;
+  margin-left: 20rpx;
+}
+.history_content_subtitle{
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+
+.history_content_subcont{
+  margin-top: 20rpx;
+  display: flex;
+}
+.history_content_subcont_sub{
+  align-items: center;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  font-size: 22rpx;
+}
+
+.history_content_subcont_sub1{
+  margin-bottom: 20rpx;
+}
+
+

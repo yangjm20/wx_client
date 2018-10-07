@@ -1,0 +1,7 @@
+<view class="all">
+<view wx:for="{{lessons}}" wx:for-index="index" class="box">
+    <image src="{{item.lujing}}"></image>
+        <text class="lesson">{{item.title}}</text>
+        <button class="{{item.flag?'btnStudy0':'btnStudy1'}}" data-lessonId="{{index}}" bindtap="{{item.flag?'tiao':'tiao1'}}">{{item.flag?"即刻挑战":"敬请期待"}}</button>
+</view>
+</view>

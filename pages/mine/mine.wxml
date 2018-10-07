@@ -1,0 +1,72 @@
+<view class='body'>
+  <view class="tou">
+    
+      <image  src="{{userInfo.avatarUrl}}"></image>
+      <text>{{userInfo.nickName}}</text>
+  </view>
+
+  <view class="content">
+    <view class="cell" bind:tap="tiao">
+        <text>绑定手机号</text>
+        <image src="../../images/arrow@2x.png"></image>
+       
+    </view>
+     <view class="cell">
+        <text bindtap='toAdmin'>管理员入口</text>
+       <image src="../../images/arrow@2x.png"></image>
+    </view>
+    <view class="cell">
+
+        <text>我的客服</text>
+        <image src="../../images/arrow@2x.png"></image>
+    </view>
+  </view>
+
+ <view class="error" bindtap='toMyBuyLesson'>
+    <text>我的购买的课程</text>
+    <image src="../../images/arrow@2x.png"></image>
+  </view>
+
+  <view class="error" bindtap='toErrorExe'>
+    <text>我的错题</text>
+    <image src="../../images/arrow@2x.png"></image>
+  </view>
+
+ 
+      <view class='history'>
+      <text class='history_title'>答题历史</text>
+          <view wx:for="{{answerHistory}}">
+              <view class='history_content'>
+
+                <text class='history_content_title'>{{lessons[item.lessonId].lessonName}}</text>
+                <text  class='history_content_subtitle'>{{lessons[item.lessonId].lesson[item.sessionId].sectionName}}</text>
+                <text class='history_content_subtitle'> {{lessons[item.lessonId].lesson[item.sessionId].section[item.vodieId].math_name}}</text> 
+                <view class='history_content_subcont'>
+
+                  <view class='history_content_subcont_sub'>
+                      <text class='history_content_subcont_sub1'>题数</text>
+                      
+                      <text class='history_content_subcont_sub2'>5</text>
+                    
+                  </view>
+
+                  <view class='history_content_subcont_sub'>
+                      <text class='history_content_subcont_sub1'>正确率</text>
+                
+                      <text class='history_content_subcont_sub2'>{{item.sumScore}}%</text>
+                      
+                  </view>
+
+                  <view class='history_content_subcont_sub'>
+                      <text class='history_content_subcont_sub1'>分数</text>
+                      
+                      <text class='history_content_subcont_sub2'>{{item.sumScore}}</text>
+                    
+                  </view>
+                </view>
+              </view>
+          </view>
+    </view>
+
+  
+</view>

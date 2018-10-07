@@ -1,0 +1,7 @@
+<import src="/pages/admin/temp/temp.wxml"/>
+<view class="all">
+    <block wx:for="{{kechengData}}" wx:key="{{index}}">
+      <template is="list-lesson" data="{{...item,index}}"/>
+    </block>
+
+</view>
