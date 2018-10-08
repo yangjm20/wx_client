@@ -12,6 +12,11 @@ page{
     margin-top: 20rpx;
     background: #FFFF;
 }
+
+.weui-tab{
+  display: flex;
+  flex-direction: column;
+}
 .weui-navbar{
     position: relative;
 }
@@ -34,14 +39,16 @@ page{
 }
 
 .weui-tab__panel{
-  width: 85%;
+  
   height: 90%;
-  margin-left: 20rpx;
 }
 
 .weui_title{
-  font-size: 35rpx;
+  background-color: rgb(226, 240, 217);
+  border-radius: 15rpx;
+
 }
+
 .weui_title_img{
   margin-top: 20rpx;
 }
@@ -52,12 +59,14 @@ page{
   line-height: 85rpx;
   margin-top:25rpx;
   margin-bottom: 50rpx;
+  margin-left: 20rpx;
 }
 
 .weui_optins_{
-  display: flex;
+   display: flex;
    align-items: center;
 }
+
 
 .pags_bottom{
   height: 100rpx;

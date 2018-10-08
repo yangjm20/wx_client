@@ -1,5 +1,5 @@
 // pages/buy/buy.jsvar 
-var getPrePayId="http://localhost:3000/wxpay/getPrePayId"
+var getPrePayId="http://localhost:3000/getPrePayId"
 var updateUserInfo = "http://localhost:3000/updateUserInfo"
 
 Page({
@@ -111,7 +111,9 @@ Page({
                   lessonId: wx.getStorageSync('lessonIdBuy')
                 },
                 success: function (res) {
+                  
                   console.log(res);
+                 
                   wx.switchTab({
                     url: '/pages/mine/mine'
                   })

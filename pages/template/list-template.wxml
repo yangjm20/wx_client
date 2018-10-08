@@ -8,13 +8,15 @@
             </view>
 
 
-<block wx:if="{{flag}}">
-    <button class="btn" bind:tap="tiao" data-lessonid="{{index}}">观看视频</button>
-</block>
+              <block wx:if="{{flag}}">
+                  <button class="btn" bind:tap="tiao" data-lessonid="{{index}}">观看视频</button>
+              </block>
 
-<block wx:else>
-    <button class="btn1">敬请期待</button>
-</block>
+
+
+              <block wx:else>
+                  <button class="btn1">敬请期待</button>
+              </block>
              
                 
                          

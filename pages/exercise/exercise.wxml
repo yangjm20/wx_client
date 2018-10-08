@@ -16,13 +16,15 @@
 
         <view class="weui-tab__panel bao" wx:for="{{examinations}}" wx:for-index="index" >
             <view  class="weui-tab__content" hidden="{{activeIndex != index}}">
-              <view class="weui_title">
-                <view class="weui_title_">
-                 
+
+         
+                <view class="weui_title">
                   <image class="weui_title_img" mode='widthFix'src='{{item.questions[0].question}}'></image>
                 </view>
-                
-              </view>
+  
+                  
+
+              
 
               <radio-group class="radio-group" bindchange="radioChange">
 

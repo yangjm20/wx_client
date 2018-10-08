@@ -72,6 +72,10 @@ Page({
                 answerOptions[i] = 'D';
                 break;
               }
+              case 4:{
+                answerOptions[i] = 'E';
+                break;
+              }
 
             }
 
@@ -93,6 +97,11 @@ Page({
 
               case 3: {
               userAnswerOptions[i] = 'D';
+                break;
+              }
+
+              case 4: {
+                userAnswerOptions[i] = 'E';
                 break;
               }
 

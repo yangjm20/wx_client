@@ -1,6 +1,6 @@
 // pages/mulu/mulu.js
 var sliderWidth = 96; 
-var updateUserInfo="http://localhost:3000/updateUserInfo"
+var getUserInfoUrl ='http://localhost:3000/getUserInfo'
 
 Page({
 
@@ -85,10 +85,21 @@ Page({
    */
   onShow: function () {
     console.log("show");
-    console.log
-    this.setData({
-      isBuy:wx.getStorageSync('userInfo').isBuy
+    wx.request({
+      url: getUserInfoUrl,
+      method:'GET',
+      data:{
+        userId:wx.getStorageSync('openid')
+      },
+      success:(res)=>{
+        if(res.data.code==0){
+          this.setData({
+            isBuy: res.data.userInfo.isBuy
+          })
+        }
+      }
     })
+    
   },
 
   /**

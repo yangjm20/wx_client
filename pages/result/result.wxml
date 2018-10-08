@@ -46,7 +46,7 @@
           <view class="middle_bottom">
               <text class="middle_bottom_title">{{tabs[activeIndex]}}解析</text>
               <text class="middle_bottom_content">解析:</text>
-              <image src="{{answers[activeIndex].analysis}}"></image>
+              <image mode='widthFix' src="{{answers[activeIndex].analysis}}"></image>
           </view>
           
       

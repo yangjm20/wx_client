@@ -4,7 +4,7 @@ App({
   config:{
     host:'www.talltree.com.cn'
   },
-
+  
   onLaunch: function () {
 
     wx.login({
