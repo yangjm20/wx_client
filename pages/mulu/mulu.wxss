@@ -10,7 +10,7 @@ video{
     margin-bottom:16rpx;
     height: 194rpx;
     box-sizing:border-box;
-    padding-top:55rpx;
+    padding-top:30rpx;
     padding-bottom: 62rpx;
     padding-left:45rpx;
     display:flex;
@@ -18,6 +18,7 @@ video{
     justify-content: space-between;
 }
 .intro .title{
+  display: flex;
     font-size:32rpx;
     color:#333;
 }
@@ -25,15 +26,22 @@ video{
   font-size: 26rpx;
   color: #333;
 }
-.intro>.content{
+.content{
     display:flex;
     width: 412rpx;
     justify-content: space-between;
     color:#A2A2A2;
     font-size: 20rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
 }
+
+.leftTitle{
+  width: 80%;
+}
+
 .box{
-    height:573rpx;
+    height:120%;
     background-color: #fff;
 }
 .ziti{
@@ -54,7 +62,7 @@ video{
     justify-content: space-between;
     align-items: center;
     padding-left:46rpx;
-    color:#A9A9A9;
+    color:rgb(14, 13, 13);
     font-size:20rpx;
     padding-right: 51rpx;
 }
@@ -114,18 +122,46 @@ video{
 .colore{
     color:#FF547C;
 }
+
+.colore1{
+    color:rgb(155, 149, 151);
+}
+
 .share{
-    width: 150rpx;
+    width: 160rpx;
     height: 60rpx;
+    line-height: 60rpx;
     background-color: #FF547C;
     color:#fff;
-    line-height: 60rpx;
-    font-size:30rpx;
+    font-size:25rpx;
     margin-right:30rpx;
+    margin-top: 30rpx;
+}
+
+.share1{
+    width: 160rpx;
+    height: 60rpx;
+    background-color: rgb(236, 98, 5);
+    color:#fff;
+    line-height: 60rpx;
+    font-size:25rpx;
+    margin-right:30rpx;
+}
+
+.share2{
+    width: 160rpx;
+    height: 60rpx;
+    background-color: rgb(38, 167, 13);
+    color:#fff;
+    line-height: 60rpx;
+    font-size:25rpx;
+    margin-right:30rpx;
+    margin-top: 20rpx;
 }
 
 .chapter{
   border: 0.5rpx solid rgb(241, 236, 236);
+  margin-bottom: 10rpx;
 }
 .icon_down{
   width: 27rpx;

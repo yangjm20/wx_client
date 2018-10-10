@@ -1,4 +1,5 @@
 //  pages/login_/login_.js
+const getPhoneUrl="http://localhost:3000/getPhone"
 Page({
 
   /**
@@ -103,5 +104,38 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getPhoneNumber:function(e){
+    console.log(e)
+    if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+      that.callBackError(e.detail.errMsg);
+    } else {
+      console.log("phonephone")
+      let params = {
+        open_id: wx.getStorageSync('openid'),//用户open_id,不一定需要
+        sessionKey: wx.getStorageSync('session_key'),//调用wx.loign接口 获取code 上传服务器获取用户open_id ,session_key
+        encryptedData: e.detail.encryptedData,//调用获取用户手机号组件，直接获取
+        iv: e.detail.iv,//调用获取用户手机号组件，直接获取
+        userType: 3//不一定需要
+      }
+      console.log(params);
+
+      wx.request({
+        url: getPhoneUrl,
+        method:'POST',
+        data:{
+          session_key:params.sessionKey,
+          encryptedData:params.encryptedData,
+          iv:params.iv
+        },
+        success:(res)=>{
+          console.log(res);
+          this.handleTap();
+        }
+      })
+      return;
+      
+    }
   }
 })

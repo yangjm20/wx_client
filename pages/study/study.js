@@ -1,12 +1,14 @@
 // pages/study/study.js
 let lessons=require("../../data/list-lesson.js");
+var getUserInfoUrl = 'http://localhost:3000/getUserInfo'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    lessons:[]
+    lessons:[],
+    isBuy:[]
   },
 
   /**
@@ -29,7 +31,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.request({
+      url: getUserInfoUrl,
+      method: 'GET',
+      data: {
+        userId: wx.getStorageSync('openid')
+      },
+      success: (res) => {
+        if (res.data.code == 0) {
+          this.setData({
+            isBuy: res.data.userInfo.isBuy
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -71,5 +86,13 @@ Page({
     wx.navigateTo({
       url: '/pages/exercisemulu/exercisemulu?lessonId='+id,
     })
+  },
+  toBuy:function(e){
+    console.log(e);
+    wx.setStorageSync('lessonIdBuy', e.currentTarget.dataset.lessonid)
+      wx.navigateTo({
+        url: "/pages/buy/buy"
+      });
+    
   }
 })

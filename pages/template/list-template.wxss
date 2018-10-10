@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 28rpx;
-  padding: 31rpx 39rpx 34rpx;
+  padding: 20rpx 39rpx 20rpx;
 }
 
 .avator{

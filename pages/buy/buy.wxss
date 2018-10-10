@@ -25,7 +25,7 @@ page{
 }
 .box>.title{
     color:#333333;
-    font-size:32rpx;
+    font-size:36rpx;
     margin-bottom: 52rpx;
     font-weight: bold;
 }
@@ -33,10 +33,15 @@ page{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size:24rpx;
+    font-size:28rpx;
     color:#333333;
     margin-bottom: 315rpx;
     height: 119rpx;
+}
+.intro_4{
+  margin-top: 50rpx;
+  text-align: center;
+  color: #fa0606;
 }
 .box>button{
     width:510rpx;

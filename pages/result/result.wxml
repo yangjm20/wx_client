@@ -7,7 +7,7 @@
         </view>
         <view class='topButtons'>
           <button class='topBtn' catchtap='return_index'>返回首页</button>
-          <button class='topBtn'>再来一次</button>
+          <button class='topBtn' bindtap='again_exercise'>再来一次</button>
         </view>
     </view>
 

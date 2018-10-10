@@ -9,8 +9,8 @@ Page({
    */
   data: {
     imgUrls: [
-      '../../images/hui@2x.png',
-      '../../images/hui1@2x.png'
+      '../../images/hui@2x.png'
+      //'../../images/hui1@2x.png'
       ],
       indicatorDots: true,
       autoplay: true,

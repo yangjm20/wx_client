@@ -89,6 +89,8 @@ Page({
   onShareAppMessage: function () {
   
   },
+
+  
   tiao:function(){
     wx.navigateTo({
       url: "/pages/cellphone/cellphone"

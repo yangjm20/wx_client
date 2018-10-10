@@ -1,9 +1,11 @@
-// pages/index/index.js
+ // pages/index/index.js
 let hotLesson = require("../../data/hotLesson.js");
 let recommendLesson = require("../../data/recommend_lesson.js");
 const getlessonUrl = "http://localhost:3000/getLesson";
 const lessonDetailUrl = "http://localhost:3000/getLessonDetail"
 const isExercisedUrl = "http://localhost:3000/getIsExercised"
+
+
 Page({
     /**
      * 页面的初始数据
@@ -119,5 +121,28 @@ Page({
         wx.navigateTo({
             url: "/pages/mulu/mulu?lessonId=" + lessonId+"&sessionId="+id2+"&voideId="+id3
         });
-    }
+    },
+
+  toExercise: function (e) {
+   
+    var lessonId = e.currentTarget.dataset.id;
+    console.log(e)
+    console.log(lessonId)
+    var id2 = e.currentTarget.dataset.id2;
+    var id3 = e.currentTarget.dataset.id3;
+    wx.navigateTo({
+        url: '/pages/exercise/exercise?lessonId=' +lessonId + '&sessionId=' + id2 + '&id=' + id3,
+    })
+  } ,
+  toLesson:function(e){
+    console.log(e)
+    var lessonId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: "/pages/mulu/mulu?lessonId=" + lessonId
+    });
+  }
+          
+    
+
+  
 })

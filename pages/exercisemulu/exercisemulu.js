@@ -2,6 +2,8 @@
 const answersHisUrl ='http://localhost:3000/getAnswerHistory'
 const getanswerUrl ='http://localhost:3000/getAnswer'
 const isExercisedUrl = 'http://localhost:3000/getIsExercised'
+const lessonDetailUrl = "http://localhost:3000/getLessonDetail"
+
 
 Page({
 
@@ -20,14 +22,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-        var lessonDetail = wx.getStorageSync('lessonDetail')
-      
-          wx.setStorageSync('lessons', lessonDetail[options.lessonId].lesson)
+    console.log("onload")
+          //var lessonDetail = wx.getStorageSync('lessonDetail')
+          //wx.setStorageSync('lessons', lessonDetail[options.lessonId].lesson)
           this.setData({
             lessonId:options.lessonId,
-            mathName: lessonDetail[options.lessonId].lessonName,
-            lessons: lessonDetail[options.lessonId].lesson
           }) 
 
        
@@ -45,19 +44,38 @@ Page({
    */
   onShow: function () {
 
-console.log("showshow")
+    console.log("showshow")
+    
+        wx.request({
+          url: isExercisedUrl,
+          data: {
+            userId: wx.getStorageSync('openid')
+          },
+          method: 'POST',
+          success: (res) => {
+            console.log("000------------")
+            console.log(res)
+            this.setData({
+              isExercised:res.data.isExercised.lessons
+            })
+          }
+        }) 
+
     wx.request({
-      url: isExercisedUrl,
-      data: {
-        userId: wx.getStorageSync('openid')
-      },
-      method: 'POST',
+      url: lessonDetailUrl,
+      method: 'GET',
       success: (res) => {
+        console.log(res.data.data)
+        var lessonDetail=res.data.data;
+        wx.setStorageSync('lessonDetail', res.data.data)
         this.setData({
-          isExercised:res.data.isExercised.lessons
+          lessons: lessonDetail[this.data.lessonId].lesson,
+          mathName: lessonDetail[this.data.lessonId].lessonName,
+          
         })
+        
       }
-    }) 
+    })
   },
 
   /**
@@ -103,7 +121,7 @@ console.log("showshow")
       },
       success:(res)=>{
         console.log(res.data.msg)
-        if(res.data.code==0){*/
+        if(res.data.code==0){
 
           wx.request({
             url: getanswerUrl,
@@ -116,7 +134,7 @@ console.log("showshow")
             success:(res)=>{
               console.log("1111")
               if(res.data.code==0){
-
+*/
                 this.setData({
                   id: e.currentTarget.dataset.idx,
                   sessionId: e.currentTarget.dataset.sessionidx
@@ -125,7 +143,7 @@ console.log("showshow")
                 wx.navigateTo({
                   url: '/pages/exercise/exercise?lessonId=' + this.data.lessonId + '&sessionId=' + this.data.sessionId + '&id=' + this.data.id,
                 })
-              }else{
+               /*}else{
 
                 wx.showToast({
                   title: '还未上传答案',
@@ -134,7 +152,7 @@ console.log("showshow")
             }
           })
   
-        /*}else{
+       }else{
 
           wx.showToast({
             title: '此题已做',

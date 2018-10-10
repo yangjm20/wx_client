@@ -12,7 +12,7 @@
               <image class='icon_down {{item.show&&"icon_down_rotate"}}' src='../../images/icon_down.png'></image>
           </view>
 
-          <scroll-view scroll-y="true" scroll-with-animation="true">
+          <scroll-view wx:if="{{item.show}}" scroll-y scroll-top style="height: 250px">
                <view wx:if="{{item.show}}" class="content_section_vodie" wx:for="{{item.section}}" wx:for-item="itemBody" catchTap="listItemTap"  data-parentindex='{{parentIndex}}' wx:for-index="idx">
          
                 <view class="content_section_mathName">
@@ -20,15 +20,20 @@
                 </view>
               
               
-                <block wx:if="{{!isExercised[lessonId].sessions[sessionIdx].vodies[idx].isExercised}}">
+              
+
+                <block wx:if="{{(itemBody.isUploadExercise&&itemBody.isUploadAnswer) && !isExercised[lessonId].sessions[sessionIdx].vodies[idx].isExercised}}">
                   <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>练习</button>
                 </block>
 
+                <block  wx:elif="{{(itemBody.isUploadExercise && itemBody.isUploadAnswer) && isExercised[lessonId].sessions[sessionIdx].vodies[idx].isExercised}}">
+                  <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex1 {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>再做一次</button>
+                </block>
+
                 <block  wx:else>
-                  <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex1 {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>重做</button>
+                  <button class="content_section_vodie_ex2">敬请期待</button>
                 </block>
                 
-
           </view>
           </scroll-view>
          

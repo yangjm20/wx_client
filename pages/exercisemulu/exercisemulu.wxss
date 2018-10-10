@@ -48,7 +48,7 @@ page{
   height: 50rpx;
   line-height: 50rpx;
   margin-left: 40rpx;
-  width: 150rpx;
+  width: 168rpx;
   color: rgb(22, 95, 145);
   font-size: 25rpx;
   border: 1rpx solid rgb(10, 95, 121)
@@ -58,10 +58,20 @@ page{
     height: 50rpx;
     line-height: 50rpx;
     margin-left: 40rpx;
-    width: 150rpx;
+    width: 168rpx;
     color: rgb(157, 216, 133);
     font-size: 25rpx;
     border: 1rpx solid rgb(157, 216, 133);
+}
+
+.content_section_vodie_ex2{
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 40rpx;
+    width: 168rpx;
+    color: rgb(158, 163, 156);
+    font-size: 25rpx;
+    border: 1rpx solid rgb(141, 145, 139);
 }
 
 .icon_down{

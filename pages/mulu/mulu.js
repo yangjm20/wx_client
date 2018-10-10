@@ -1,6 +1,7 @@
 // pages/mulu/mulu.js
 var sliderWidth = 96; 
 var getUserInfoUrl ='http://localhost:3000/getUserInfo'
+const getanswerUrl = 'http://localhost:3000/getAnswer'
 
 Page({
 
@@ -22,18 +23,18 @@ Page({
     comData:[
       {
         lujing:"../../images/ke1@2x.png",
-        title:"王妈妈",
-        subtitle:"课程内容很棒，孩子非常喜欢"
+        title:"会飞的鱼",
+        subtitle:"课程内容很棒，一听就懂"
       },
       {
         lujing:"../../images/ke1@2x.png",
-        title:"张妈妈",
-        subtitle:"宝宝学完很开心"
+        title:"远方",
+        subtitle:"课程很便宜，考研很有用"
       },
       {
         lujing:"../../images/motherL.gif",
-        title:"李妈妈",
-        subtitle:"课程内容很棒，孩子非常喜欢"
+        title:"文都机构",
+        subtitle:"数学知识点讲解生动"
       }
 
     ]
@@ -41,16 +42,30 @@ Page({
 
   onLoad: function (options) {
 
+        console.log(options)
         wx.setStorageSync('lessonIdBuy', options.lessonId)
-        this.setData({
-          lessonId: options.lessonId,
-          mathName: wx.getStorageSync('lessonDetail')[options.lessonId].lessonName,
-          highMath: wx.getStorageSync('lessonDetail')[options.lessonId].lesson
-        })
 
-        wx.setNavigationBarTitle({
-          title: this.data.mathName,
-        });
+    if (options.sessionId!=undefined){
+      this.setData({
+       
+        sessionId: options.sessionId,
+        id: options.voideId,
+        
+      })
+
+      
+    }
+
+    this.setData({
+      lessonId: options.lessonId,
+      mathName: wx.getStorageSync('lessonDetail')[options.lessonId].lessonName,
+      highMath: wx.getStorageSync('lessonDetail')[options.lessonId].lesson
+    })
+    wx.setNavigationBarTitle({
+      title: this.data.mathName,
+    });
+
+        
       
 
     // 设置顶部标题
@@ -169,9 +184,42 @@ Page({
       });
     }
 
-    
   },
+  toExercise:function(){
+    if(this.data.id==-1){
+      wx.navigateTo({
+        url: '/pages/exercisemulu/exercisemulu?lessonId=' + this.data.lessonId,
+      })
+    }else{
 
+      wx.request({
+        url: getanswerUrl,
+        data: {
+          lessonId: this.data.lessonId,
+          sectionId: this.data.sessionId,
+          voideId: this.data.id
+        },
+        method: 'GET',
+        success: (res) => {
+          console.log("1111")
+          if (res.data.code == 0) {
+
+            wx.navigateTo({
+              url: '/pages/exercise/exercise?lessonId=' + this.data.lessonId + '&sessionId=' + this.data.sessionId + '&id=' + this.data.id,
+            })
+          } else {
+
+            wx.showToast({
+              title: '还未上传答案',
+            })
+          }
+        }
+      })
+
+
+
+    }
+  },
 
 
   wxPay:function(){  

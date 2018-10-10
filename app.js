@@ -25,6 +25,7 @@ App({
                 var userInfo=res.data.userInfo;
                 if(userInfo){
                   wx.setStorageSync('openid', userInfo.userId)
+                  wx.setStorageSync('session_key', res.data.session_key)
                   wx.setStorageSync('userInfo', userInfo)
                 }else{
                   console.log('获取用户唯一标识失败');

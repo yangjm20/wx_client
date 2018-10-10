@@ -6,8 +6,8 @@
   </view>
 
   <view class="content">
-    <view class="cell" bind:tap="tiao">
-        <text>绑定手机号</text>
+    <view class="cell">
+        <text>注册会员</text>
         <image src="../../images/arrow@2x.png"></image>
        
     </view>

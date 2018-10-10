@@ -18,25 +18,66 @@
     <view class="hotImg">
         <scroll-view scroll-x style="width:100%">
             <block wx:for="{{hotLesson}}">
-                <view style="background-color:{{item.color}}" class="item" bindtap='tiao' data-id="{{item.id}}">
-                    <text class="title">{{item.title}}</text>
-                    <text class="subtitle">{{item.subtitle}}</text>
+
+                <block  wx:if="{{item.flag}}">
+                  <view style="background-color:{{item.color}}" class="item" bindtap='toLesson' data-id="{{item.id}}">
+                      
+                        <text class="title">{{item.title}}</text>
+                        <text  class="subtitle">{{item.subtitle}}</text>
+                        <text  class="subtitle">{{item.tap}}</text>    
+                      
+
                 </view>
+                </block>
+
+
+                 <block  wx:else>
+                  <view style="background-color:{{item.color}}" class="item">
+                      
+                     
+                        <text class="title">{{item.title}}</text>
+                       
+                        <text  class="subtitle">{{item.subtitle}}</text>
+                         <text  class="subtitle">敬请期待</text>
+                      
+
+                </view>
+                </block>
+
             </block>
+
         </scroll-view>
     </view>
 </view>
+
 <view class="introVideo">
     <viw class="topTitle">
         <image src="../../images/intro@2x.png"></image>
-        <text>推荐视频</text>
+        <text>试看视频</text>
     </viw>
     <view class="hotImg">
 
         <view wx:for="{{recommendLesson}}" wx:for-item="recommend_item" class="singleBox" bindtap='tiao' data-id='{{recommend_item.id}}' data-id2='{{recommend_item.id2}}' data-id3='{{recommend_item.id3}}'>
            <image src="../..{{recommend_item.url}}"></image>
            <text class="title">{{recommend_item.name}}</text>
-           <text class="subtitle">{{recommend_item.watchAll}}</text>
+           <text class="subtitle"></text>
+        </view>
+
+    </view>
+</view>
+
+
+<view class="introVideo">
+    <viw class="topTitle">
+        <image src="../../images/tixi@2x.png"></image>
+        <text>精彩习题</text>
+    </viw>
+    <view class="hotImg">
+
+        <view wx:for="{{recommendLesson}}" wx:for-item="recommend_item" class="singleBox" bindtap='toExercise' data-id='{{recommend_item.id}}' data-id2='{{recommend_item.id2}}' data-id3='{{recommend_item.id3}}'>
+           <image src="../..{{recommend_item.url}}"></image>
+           <text class="title">{{recommend_item.name}}</text>
+           <text class="subtitle"></text>
         </view>
 
     </view>

@@ -9,7 +9,10 @@
    
   <text class="userName">欢迎来到高树吧</text>
 
-  <view catchtap='handleTap' class='goStudy' style='display:{{isShow?"none":"block"}}'>
-    <text catchtap='handleTap'>开启高树学习之旅</text>
+  <view class='goStudy' style='display:{{isShow?"none":"block"}}'>
+    
+    <button class="weui-btn" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">高树学习之旅</button>
   </view>
+
+  
 </view>

@@ -5,11 +5,13 @@
             <view class="content">
                 <text>{{title}}</text>
                 <text class="xue">共{{subtitle}}节课程</text>
+
+                <text wx:if="{{flag}}" class="xue">更新至22节</text>
             </view>
 
 
               <block wx:if="{{flag}}">
-                  <button class="btn" bind:tap="tiao" data-lessonid="{{index}}">观看视频</button>
+                  <button class="btn" bind:tap="tiao" data-lessonid="{{index}}">进入课程</button>
               </block>
 
 

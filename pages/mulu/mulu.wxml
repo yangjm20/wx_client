@@ -1,23 +1,43 @@
-<video poster='https://www.talltree.com.cn/exercises/img.png' src="{{highMath[sessionId].section[id].url}}"  bindended="shikan"
+<video poster='https://www.talltree.com.cn/exercises/img.jpg' src="{{highMath[sessionId].section[id].url}}"  bindended="shikan"
        controls autoplay enable-progress-gesture page-gesture></video>
 <view class="intro">
-    <view class="title">{{highMath[sessionId].section[id].math_name}}
-        <block wx:if="{{isBuy[lessonId].lessonIsBuy}}">
-          <button class="share" style="float:right">做题</button>
-        </block>
+    <view class="title">
 
-        <block wx:else>
-          <button class="share" style="float:right" bindtap="wxPay">购买</button>
-        </block>
-        
+        <view class="leftTitle">
+            <view class="title_vodie">
+              <block wx:if="{{id==-1||highMath[sessionId].section[id].isUpload}}">{{highMath[sessionId].section[id].math_name}}</block>
+              <block wx:else><view style='color:#FF547C'>还未上传视频，敬请期待</view></block>
+            </view>
+             
+            
+
+            <view class="content">
+              <text>主讲：叶子姐</text>
+              <text>|</text>
+              <text>课时：89</text>
+              <text>|</text>
+              <text>562人已学习</text>
+            </view>
+        </view>
+           
+           <view>
+                <block wx:if="{{isBuy[lessonId].lessonIsBuy}}">
+
+                  <view class="buyAndExer">
+                      <button class="share1" bindtap="toExercise">挑战答题</button>
+
+                      <button class="share2">已购买</button>
+                  </view>
+                
+                </block>
+
+                <block wx:else>
+                  
+                    <button class="share" style="float:right" bindtap="wxPay">购买视频</button>         
+                </block>
+           </view>
     </view>
-    <view class="content">
-        <text>主讲：数学老师</text>
-        <text>|</text>
-        <text>课时：{{highMath[lessonId].section.length}}</text>
-        <text>|</text>
-        <text>562人已学习</text>
-    </view>
+    
 </view>
 <view class="box">
     <view class="weui-tab">
@@ -43,22 +63,29 @@
                                 </view>
 
 
+                              <scroll-view wx:if="{{parentItem.show}}" scroll-y scroll-top style="height: 150px">
 
-                                    <block wx:if="{{parentItem.show}}" wx:for="{{parentItem.section}}" wx:for-item="childItem" wx:key="this" catchTap="listItemTap"  data-parentindex='{{parentIndex}}' wx:for-index="idx">
+                                                                        <block wx:if="{{parentItem.show}}" wx:for="{{parentItem.section}}" wx:for-item="childItem" wx:key="this" catchTap="listItemTap"  data-parentindex='{{parentIndex}}' wx:for-index="idx">
 
                                 
                                     
                                         <view data-idx="{{idx}}" data-sessionIdx="{{sessionIdx}}" class="cell {{(idx == id &&sessionIdx==sessionId)? 'colore' : 'a2'}}" bindtap='huan'>
-                                            <view>{{childItem.math_name}}</view>
-                                            <view>{{childItem.TD}}</view>
+                                            <view class="{{childItem.isUpload?'a2':'colore1'}}">{{childItem.math_name}}</view>
+                                            <block wx:if="{{childItem.isUpload}}">
+                                              <view class="a2">{{childItem.TD}}</view>
+                                            </block>
+
+                                            <block wx:else>
+                                              <view class="colore1">敬请期待</view>
+                                            </block>
+                                            
                                         </view>
-
-                                
-
-
-                            
                                         
                                     </block>
+
+                              </scroll-view>
+
+
 
 
                             </view>

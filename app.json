@@ -1,5 +1,6 @@
 {
   "pages": [
+   "pages/login_/login_",
     "pages/index/index",
     "pages/study/study",
     "pages/errorExercise/errorExercise",
@@ -8,11 +9,12 @@
     "pages/exercisemulu/exercisemulu",
     "pages/exercise/exercise",
     "pages/kecheng/kecheng",
+    "pages/buy/buy",
     "pages/test/test",
     "pages/mulu/mulu",
     "pages/cellphone/cellphone",
     "pages/mine/mine",
-    "pages/buy/buy",
+
     "pages/admin/session/session",
     "pages/admin/exercises/exercises",
     "pages/admin/successAnswer/successAnswer",

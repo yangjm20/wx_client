@@ -10,12 +10,16 @@
 </view>
 <view class="box">
     <view class="title">
-        会员福利
+        课程学习卡权益：
     </view>
     <view class="intro">
-        <text>1.享受所有VIP视频课程的观看权限</text>
-        <text>2.专属标志显示</text>
-        <text>3.专属课程推送</text>
+
+        <text>1.享受所购课程全部视频的永久观看权限</text>
+        <text>2.开通课程在线练习权限</text>
+        <text>3.记录答题历史，开通错题本功能</text>
+        <view class="intro_4">注：课程一旦售出，概不退购</view>
     </view>
+    
+    
     <button bindtap='sure'>确定选购</button>
 </view>

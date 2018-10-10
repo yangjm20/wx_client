@@ -134,6 +134,7 @@ Page({
         this.setData({
             scoreStudent: scoreDetail.data.score,
             answers: scoreDetail.data.answers,
+            lessonId:options.lessonId,
             sessionId: options.sessionId,
             id: options.id,
             examinations: wx.getStorageSync('examinations'),
@@ -225,4 +226,14 @@ Page({
       activeIndex: e.currentTarget.id,
     });
   },
+
+  again_exercise:function(e){
+
+
+          wx.navigateTo({
+            url: '/pages/exercise/exercise?lessonId=' + this.data.lessonId + '&sessionId=' + this.data.sessionId + '&id=' + this.data.id,
+          })
+        
+
+  }
 })

@@ -1,13 +1,26 @@
+page{
+   background-color: #eee;
+}
 .all{
     padding-top:45rpx;
     padding-left:24rpx;  
 }
 .all>.box{
-    height:145rpx;
-    line-height: 130rpx;
+    height:213rpx;
+    align-items: center;
     display:flex;  
-    margin-bottom: 72rpx; 
-   
+    margin-bottom: 28rpx; 
+    background-color: #fff;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+.right{
+  flex:1;
+  display: flex;
+  font-size: 32rpx;
+  color: #333;
+  align-items: center;
+  
 }
 .all>.box>image{
     width:135rpx;
@@ -15,7 +28,7 @@
     border-radius: 80rpx;
     margin-left: 30rpx;
 }
-.all>.box>.lesson{
+.lesson{
     margin-left: 60rpx;
     display: flex;
     font-size:30rpx;
@@ -23,17 +36,15 @@
     letter-spacing: 5rpx;
 }
 
-.all>.box>.btnStudy0{
+.btnStudy0{
     height: 60rpx;
-    margin-top: 45rpx;
     color:rgb(248, 249, 252);
     background: rgb(4, 146, 182);
     margin-right: 100rpx;
     font-size:25rpx;
 }
-.all>.box>.btnStudy1{
+.btnStudy1{
     height: 60rpx;
-    margin-top: 45rpx;
     color:rgb(102, 109, 92);
     margin-right: 100rpx;
     font-size:25rpx;

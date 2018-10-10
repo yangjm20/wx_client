@@ -9,7 +9,7 @@ page{
 }
 
 .tou{
-    background-color: rgb(10, 37, 28);
+    background-color: #458B74;
     height: 230rpx;
     margin: auto;
     box-sizing: border-box;
@@ -30,6 +30,10 @@ page{
     margin-top: 30rpx;
     font-size:28rpx;
     color:#FFF;    
+}
+
+.title{
+  display: flex;
 }
 
 
