@@ -22,7 +22,6 @@ page{
   font-weight: bold;
   margin: 100rpx 0;
 }
-
 .goStudy{
   width: 300rpx;
   height: 80rpx;
@@ -30,4 +29,7 @@ page{
   border: 1rpx solid #999;
   text-align: center;
   line-height: 80rpx;
+}
+.weui-btn{
+  background-color: rgb(109, 197, 128);
 }

@@ -11,7 +11,14 @@
 
   <view class='goStudy' style='display:{{isShow?"none":"block"}}'>
     
-    <button class="weui-btn" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">高树学习之旅</button>
+    <block wx:if="{{userInfos.phone!=null}}">
+        <button class="weui-btn" bindtap='handleTap'>高树学习之旅</button>
+    </block>
+
+    <block wx:else>
+      <button class="weui-btn" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">高树学习之旅</button>
+
+    </block>
   </view>
 
   
