@@ -1,0 +1,62 @@
+page{
+    background-color: #eee;
+}
+
+.luobo{
+    width: 100%;
+    box-sizing: border-box;    
+    height:480rpx;  
+}
+.luobo .activity{
+    width: 750rpx;
+    height: 477rpx;
+  }
+.slide-image{
+    width: 640rpx;
+    height: 360rpx; 
+    border-radius: 10rpx;
+    margin:38rpx 26rpx 48rpx 48rpx;
+}
+
+.box{
+    background-color: #fff;
+    padding-top:10rpx;
+    padding-left:10rpx;
+    height: 100%;
+}
+.box>.title{
+    color:#333333;
+    font-size:36rpx;
+    margin-bottom: 30rpx;
+    font-weight: bold;
+}
+.box>.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size:28rpx;
+    color:#333333;
+    margin-bottom: 315rpx; 
+}
+
+.box>.intro>text{
+  margin-bottom: 10rpx;
+}
+.intro_4{
+  margin-top: 50rpx;
+  text-align: center;
+  color: #fa0606;
+}
+.box>.intro>button{
+    width:510rpx;
+    height:96rpx;
+    color:#fff;
+    background:rgba(255,84,124,1);
+    border-radius:48rpx;
+    font-size:30rpx;
+    line-height: 96rpx;
+    text-align: center;
+    box-shadow:0 21rpx  46rpx rgba(255,84,124,0.47); 
+    margin-bottom: 20rpx;
+    margin-top: 40rpx;
+}

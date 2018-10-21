@@ -1,8 +1,8 @@
 // pages/result/result.js
-const getScoreDetailUrl = "http://localhost:3000/getScoreDetail"
-const lessonUrl = "http://localhost:3000/getLessonDetailById"
+const getScoreDetailUrl = "https://www.talltree.com.cn/getScoreDetail"
+const lessonUrl = "https://www.talltree.com.cn/getLessonDetailById"
 
-const saveAnswerAndUseAnswerOp='http://localhost:3000/saveAnswerAndUserAnswerOps'
+const saveAnswerAndUseAnswerOp ='https://www.talltree.com.cn/saveAnswerAndUserAnswerOps'
 Page({
 
   /**

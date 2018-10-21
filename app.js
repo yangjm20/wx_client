@@ -1,5 +1,5 @@
 //app.js\
-const getOpenIdUrl ='http://localhost:3000/getOpenId'
+const getOpenIdUrl ='https://www.talltree.com.cn/getOpenId'
 App({
   config:{
     host:'www.talltree.com.cn'

@@ -10,7 +10,7 @@ page{
     border-radius: 10rpx;
     margin: auto;
     margin-top: 20rpx;
-    background: #FFFF;
+    background: #FFFFFF;
 }
 
 .weui-tab{
@@ -51,14 +51,15 @@ page{
 
 .weui_title_img{
   margin-top: 20rpx;
+  width: 100%;
 }
 .weui_options{
   display: flex;
   font-size: 30rpx;
   height: 90%;
   line-height: 85rpx;
-  margin-top:25rpx;
-  margin-bottom: 50rpx;
+  margin-top:10rpx;
+  margin-bottom: 30rpx;
   margin-left: 20rpx;
 }
 
@@ -66,7 +67,6 @@ page{
    display: flex;
    align-items: center;
 }
-
 
 .pags_bottom{
   height: 100rpx;
@@ -89,5 +89,8 @@ page{
 .textA{
   background: rgb(117, 172, 138);
   border:1rpx solid;
+}
+.weui_title_img1{
+  width: 640rpx;
 }
 

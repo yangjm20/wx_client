@@ -1,5 +1,4 @@
-<video poster='https://www.talltree.com.cn/exercises/img.jpg' src="{{highMath[sessionId].section[id].url}}"  bindended="shikan"
-       controls autoplay enable-progress-gesture page-gesture></video>
+<video poster='https://www.talltree.com.cn/exercises/img.jpg' src="{{highMath[sessionId].section[id].url}}" autoplay bindended="shikan" controls enable-progress-gesture page-gesture></video>
 <view class="intro">
     <view class="title">
 
@@ -9,14 +8,14 @@
               <block wx:else><view style='color:#FF547C'>还未上传视频，敬请期待</view></block>
             </view>
              
-            
-
             <view class="content">
-              <text>主讲：叶子姐</text>
-              <text>|</text>
+              <text></text>
+              <text></text>
+              <!--
               <text>课时：89</text>
               <text>|</text>
               <text>562人已学习</text>
+              -->
             </view>
         </view>
            
@@ -33,7 +32,7 @@
 
                 <block wx:else>
                   
-                    <button class="share" style="float:right" bindtap="wxPay">购买视频</button>         
+                    <button class="share" style="float:right" bindtap="wxPay">购买课程</button>         
                 </block>
            </view>
     </view>
@@ -92,6 +91,7 @@
 
                         </block>
             </view>
+            
             <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                 <block wx:for="{{comData}}">
                     <view class="nei">
@@ -105,19 +105,11 @@
                     </view>
                 </block>
             </view>
+
             <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                 <view class="xiang">
-                    <text>这里有各种奇思妙想，</text>
-                    <text>有疯狂的简笔画，</text>
-                    <text>会教你用叉子打蝴蝶结，</text>
-                    <text>各种新奇玩意，</text>
-                    <text>只要你在生活中发现任何美好的事物，</text>
-                    <text>我们都能动手制作出来。</text>
-                    <text></text>
-                    <text></text>
-                    <text>陶艺体验、美味厨艺、创意手工、艺术涂鸦</text>
-                    <text>等多种不同艺术形式，给孩子留下美好的童年记忆。</text>
-
+                    <text>更新计划：每周一更新3节。</text>
+                   
                 </view>
             </view>
         </view>

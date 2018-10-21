@@ -1,9 +1,20 @@
 .luobo{
     width: 100%;
     box-sizing: border-box;
-    padding-top:26rpx;
-    height:344rpx;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    padding-top:15rpx;
+    height:320rpx;
     padding-bottom:52rpx;
+}
+.videoIndex{
+  margin-top: 10rpx;
+  text-align: center;
+}
+video{
+    width: 96%;
+    height:405.5rpx;
+    object-fit: cover;
 }
 .luobo .activity{
     width: 100%;
@@ -16,14 +27,18 @@
     margin:0 auto;
     border-radius: 10rpx;
   }
+
+  
   .hotCourse{
     height: 219rpx;
-    padding-left:24rpx;
-    margin-bottom: 42rpx;
+    padding-left:15rpx;
+    padding-right:15rpx;
+    margin-bottom: 20rpx;
     display:flex;
     flex-direction: column;
     justify-content: space-between;    
   }
+  
   .hotCourse>.topTitle{
       display:flex;
       align-items: center;
@@ -44,7 +59,9 @@
     font-size:22rpx;
     color:#AAACB1;
   }
-  .hotCourse>.hotImg{
+
+  /*
+.hotCourse>.hotImg{
       height:160rpx;      
   }
 .hotCourse>.hotImg scroll-view{
@@ -74,50 +91,69 @@
     text-align:center;
 
 }
+*/
+
+.hotCourse>.hotImg{
+      height:160rpx;      
+  }
+.hotCourse>.hotImg scroll-view{
+    white-space: nowrap;
+}
+.hotCourse>.hotImg .item{
+    width: 300rpx;
+    display:inline-block;
+    height:160rpx;
+    box-sizing: border-box; 
+    margin-right:18rpx;
+    border-radius: 10rpx;
+}
 
 .introVideo{
-  padding-left:24rpx;
-  padding-right:24rpx;
+  padding-left:15rpx;
+  padding-right:10rpx;
   display:flex;
-  flex-direction: column;
 }
-.introVideo>.topTitle{ 
+
+.video01{
+  margin-right: 30rpx;     
+}
+.introVideo>.video01>.topTitle{ 
     display: flex;   
     height: 25px;
     margin-bottom: 28rpx;
     align-items: center;
 }
-.introVideo>.topTitle>image{
+.introVideo>.video01>.topTitle>image{
     width:28px;
     height:27px;
 }
-.introVideo>.topTitle > text{
+.introVideo>.video01>.topTitle > text{
     color: #333333;
     font-size:26rpx; 
     margin-left:15rpx;
 }
 
-.introVideo>.hotImg{
+.introVideo>.video01>.hotImg{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.introVideo>.hotImg>.singleBox{
+.introVideo>.video01>.hotImg>.singleBox{
     width: 342rpx;
     height:285rpx;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.introVideo>.hotImg>.singleBox >image{
+.introVideo>.video01>.hotImg>.singleBox >image{
     width: 342rpx;
     height:222rpx;
 }
-.introVideo>.hotImg>.singleBox >.title{
+.introVideo>.video01>.hotImg>.singleBox >.title{
     font-size:20rpx;
     color:#666666;
 }
-.introVideo>.hotImg>.singleBox >.subtitle{
+.introVideo>.video01>.hotImg>.singleBox >.subtitle{
     font-size:16rpx;
     color:#999999;
 }

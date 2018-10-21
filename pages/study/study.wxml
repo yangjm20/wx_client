@@ -3,7 +3,7 @@
     <image src="{{item.lujing}}"></image>
       <view class="right">
         <text class="lesson">{{item.title}}</text>
-        <button class="{{item.flag?'btnStudy0':'btnStudy1'}}" data-lessonId="{{index}}" bindtap="{{item.flag?(isBuy[index].lessonIsBuy?'tiao':'toBuy'):'tiao1'}}">{{item.flag? (isBuy[index].lessonIsBuy?"即可挑战":"前去购买"):"敬请期待"}}</button>
+        <button class="{{item.flag?'btnStudy0':'btnStudy1'}}" data-lessonId="{{index}}" bindtap="{{item.flag?(isBuy[index].lessonIsBuy?'tiao':'toBuy'):'tiao1'}}">{{item.flag? (isBuy[index].lessonIsBuy?"即刻挑战":"购买课程"):"敬请期待"}}</button>
       </view>
         
 </view>

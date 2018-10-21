@@ -1,20 +1,17 @@
 /* pages/login_/login_.wxss */
-
 page{
   height: 100%;
-  background: #458B74;
 }
 .login_Container{
   display: flex;
   flex-direction:column;
   align-items: center;
+  height: 100%;
 }
 
 .avatar{
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 100rpx;
-  margin: 100rpx  0;
+  height: 100%;
+  width: 100%;
 }
 
 .userName{

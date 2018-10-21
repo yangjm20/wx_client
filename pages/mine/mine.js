@@ -1,7 +1,7 @@
 // pages/mine/mine.js
 let lessons = require("../../data/list-lesson.js");
-const getHistoryUrl ='http://localhost:3000/getHistory'
-const getErrosUrl = 'http://localhost:3000/getErrors'
+const getHistoryUrl ='https://www.talltree.com.cn/getHistory'
+const getErrosUrl = 'https://www.talltree.com.cn/getErrors'
 var app = getApp();
 
 Page({
@@ -9,10 +9,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+   memberInfo:null,
    userInfo:{},
    lessons:[],
    lesson:[],
-   answerHistory:[]
+   answerHistory:[],
+   isShow:true,
+    modalHidden: true
   },
 
   /**
@@ -21,6 +24,7 @@ Page({
   onLoad: function (options) {
     console.log(app.globalData);
     console.log(app.globalData.userInfo);
+    this.getUserInfo()
   },
 
   /**
@@ -33,6 +37,40 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+
+  getUserInfo() {
+    wx.getSetting({
+      success: (res) => {
+        console.log(res);
+        if (res.authSetting['scope.userInfo']) {
+          this.setData({
+            isShow: false
+          })
+        } else {
+          this.setData({
+            isShow: true
+          })
+        }
+      }
+    })
+
+    wx.getUserInfo({
+      success: (data) => {
+        console.log(data.userInfo)
+        this.setData({
+          userInfo: data.userInfo
+        })
+      }
+    })
+  },
+
+  handleUserInfo(userInfo) {
+    console.log(userInfo)
+    if (userInfo.detail.rawData) {
+      this.getUserInfo()
+    }
+  },
+
   onShow: function () {
     wx.request({
       url: getHistoryUrl,
@@ -48,6 +86,7 @@ Page({
             userInfo: app.globalData.userInfo,
             lessons: wx.getStorageSync('lessonDetail'),
             answerHistory: res.data.history,
+            memberInfo: res.data.memberInfo,
             lesson: lessons.list_lesson
           })
         }
@@ -127,5 +166,43 @@ toMyBuyLesson:function(){
     })
 
     
+  },
+  toMyChat:function(){
+    /*
+    wx.showModal({
+      title: '客服QQ群：932906553',
+      content: '高树吧学习交流群',
+    })*/
+    this.setData({
+      modalHidden: false
+    })
+  },
+
+  toMyMember:function(){
+    wx.navigateTo({
+      url: "/pages/buyMember/buyMember"
+    });
+  },
+  toMember:function(){
+    wx.navigateTo({
+      url: "/pages/member/member"
+    });
+  },
+
+  modalCandel: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
+  },
+
+  /**
+   *  点击确认
+   */
+  modalConfirm: function () {
+    // do something
+    this.setData({
+      modalHidden: true
+    })
   }
 })

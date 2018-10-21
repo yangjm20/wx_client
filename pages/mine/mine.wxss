@@ -19,6 +19,10 @@ page{
     flex-direction: column;   
     align-items: center; 
 }
+.touxiang{
+ background: #458B74;
+ color: #FFFFFF;
+}
 
 .tou>image{
     width: 80rpx;
@@ -36,8 +40,6 @@ page{
   display: flex;
 }
 
-
-
 .content{
     margin: auto;
     width:90%;
@@ -51,23 +53,41 @@ page{
     border-radius: 10rpx;
 }
 .content>.cell{
+    display: flex;
+    align-items: center;
     height: 50rpx;
-    line-height: 50rpx;
-    margin-left: 20rpx;
     margin-top: 20rpx;
     margin-bottom: 20rpx;
-    align-items: center;
     font-size: 22rpx;  
-    
 }
-.content>.cell>image{
-  float: right; 
-  margin-right: 50rpx;
-  height: 30rpx;
-  width: 30rpx;
+.cell>text{
+  width: 80%;
+}
+
+.error>text{
+  width: 80%;
+}
+
+.right{ 
+  float: right;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.img{
+  float: right;
+  margin-right: 20rpx;
+}
+.left{
+  height: 40rpx;
+  line-height: 30rpx;
+  width: 40rpx;
+  margin-right:30rpx;
 }
 
 .error{
+    display: flex;
+    align-items: center;
     margin: auto;
     width:90%;
     margin-top: 30rpx;
@@ -78,17 +98,11 @@ page{
     border-radius: 10rpx;
     font-size: 22rpx;
 }
-.error>text{
-  margin-left: 20rpx;
-}
 
-.error>image{
-  float: right; 
-  margin-right: 50rpx;
-  height: 30rpx;
-  width: 30rpx;
+.firsthistory{
+  display: flex;
+  align-items: center;
 }
-
 .history{
     margin: auto;
     width:90%;
@@ -100,7 +114,7 @@ page{
     border-radius: 10rpx;
 }
 .history_title{
-  margin-left: 20rpx;
+
   font-size: 22rpx;
 }
 .history_content{
@@ -135,6 +149,12 @@ page{
 
 .history_content_subcont_sub1{
   margin-bottom: 20rpx;
+}
+
+.QQimage {
+  width: 541rpx;
+  height: 741rpx;
+  margin-left: 10rpx;
 }
 
 

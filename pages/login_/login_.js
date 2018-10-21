@@ -1,5 +1,5 @@
 //  pages/login_/login_.js
-const getPhoneUrl="http://localhost:3000/getPhone"
+
 Page({
 
   /**
@@ -17,12 +17,9 @@ Page({
   onLoad: function (options) {
 
     this.setData({
-      userInfos: wx.getStorageSync('userInfos')
+      userInfos: wx.getStorageSync('userInfo')
     })
-
-    
-    this.getUserInfo()
-    
+    //this.getUserInfo()
   },
 
   getUserInfo(){
@@ -49,8 +46,6 @@ Page({
         })
       }
     })
-
-    
   },
 
   handleUserInfo(userInfo){
@@ -59,6 +54,7 @@ Page({
       this.getUserInfo()
     }
   },
+  
   handleTap(){
     wx.switchTab({
       url: '/pages/index/index',

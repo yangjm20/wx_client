@@ -25,37 +25,32 @@
 
         </view>
 
-       
-          <view class="middle_bottom">
+
+
+
+       <view class="weui_title">
+                  <image class="weui_title_img" mode='widthFix'src='{{exercises[activeIndex].questions[0].question}}'></image>
+      </view>
+
+      <radio-group class="radio-group" bindchange="radioChange">
+
+                  <radio class="weui_options" wx:for="{{exercises[activeIndex].questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
+                    <view class="weui_optins_">
+                      <text class="weui_options_op"></text>
+                      <image class="weui_title_img1" mode='widthFix' src='{{item.option}}'></image>
+                    </view>
+                  </radio>
+              </radio-group>
+
+
+
+
+        <view class="middle_bottom">
               <text class="middle_bottom_title">{{tabs[activeIndex]}}解析</text>
               <text class="middle_bottom_content">解析:</text>
               <image mode='widthFix' src="{{answers[activeIndex].analysis}}"></image>
-          </view>
-          
-      
-
-    </view>
-
-    <view class='bottom'>
-     
-      <view  wx:for="{{examinations}}" wx:for-index="index">
-
-        <view hidden="{{activeIndex != index}}">
-            <view class='bottom_title'>
-              <text class='bottom_title_'>【{{item.examinationType}}】{{item.questions[0].question}}</text>
-            </view>
-
-            <radio-group class="radio-group">
-            
-              <radio class="weui_optins_" wx:for="{{item.questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
-                <view class='bottom_content'>{{item.op}}----{{item.option}}</view>
-              </radio>
-
-            </radio-group>
-            
         </view>
-            
-      </view>
-     
+          
+    
     </view>
 </view>

@@ -1,7 +1,7 @@
 // pages/exercise/exercise.js
 //let examination=require("../../data/examination.js");
 
-const exercisesUrl ="http://localhost:3000/getExercise";
+const exercisesUrl ="https://www.talltree.com.cn/getExercise";
 
 Page({
 

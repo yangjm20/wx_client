@@ -1,40 +1,70 @@
 <view class='body'>
   <view class="tou">
     
+    <button class="touxiang" bindgetuserinfo="handleUserInfo" open-type="getUserInfo" style='display:{{isShow?"block":"none"}}'>显示头像信息</button>
+
       <image  src="{{userInfo.avatarUrl}}"></image>
+
       <text>{{userInfo.nickName}}</text>
   </view>
 
+
   <view class="content">
-    <view class="cell">
-        <text>注册会员</text>
-        <image src="../../images/arrow@2x.png"></image>
-       
+    <view class="cell"  bindtap="{{memberInfo.isMember?'toMember':'toMyMember'}}">
+        <image class='left' src="../../images/member.png"></image>
+
+        <text wx:if="{{memberInfo.isMember}}">我的会员卡</text>
+        <text wx:else>注册会员</text>
+
+        <view class="img">
+          <image class='right' src="../../images/arrow@2x.png"></image>
+        </view> 
     </view>
      <view class="cell">
+        <image class='left' src="../../images/admin.png"></image>
         <text bindtap='toAdmin'>管理员入口</text>
-       <image src="../../images/arrow@2x.png"></image>
+       <image class='right' src="../../images/arrow@2x.png"></image>
     </view>
-    <view class="cell">
-
+    <view class="cell" bindtap='toMyChat'>
+        <image class='left' src="../../images/chat.png"></image>
         <text>我的客服</text>
-        <image src="../../images/arrow@2x.png"></image>
+        <image class='right' src="../../images/arrow@2x.png"></image>
     </view>
+
+    <modal title="客服QQ群：932906553" hidden="{{modalHidden}}" bindconfirm="modalConfirm"  bindcancel="modalCandel">
+        <view>
+          <image class="QQimage" src="../../images/QQCard.jpeg" mode='aspectFill'></image>
+        </view>
+    </modal>
+
   </view>
 
  <view class="error" bindtap='toMyBuyLesson'>
-    <text>我的购买的课程</text>
-    <image src="../../images/arrow@2x.png"></image>
+   
+      <image class='left' src="../../images/buylesson.png"></image>
+      <text>我购买的课程</text>
+      <image class='right' src="../../images/arrow@2x.png" ></image>
+   
   </view>
 
   <view class="error" bindtap='toErrorExe'>
-    <text>我的错题</text>
-    <image src="../../images/arrow@2x.png"></image>
+    
+      <image class='left' src="../../images/myerror.png"></image>
+      <text>我的错题</text>
+      <image class='right' src="../../images/arrow@2x.png"></image>
+    
   </view>
 
- 
+      
       <view class='history'>
-      <text class='history_title'>答题历史</text>
+
+      <view class='firsthistory'>
+        <image class='left' src="../../images/answerHistory.png"></image>
+
+        <text class='history_title'>答题历史</text>
+      </view>
+      
+      
           <view wx:for="{{answerHistory}}">
               <view class='history_content'>
 

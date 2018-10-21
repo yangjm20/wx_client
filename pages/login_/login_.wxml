@@ -2,24 +2,31 @@
 <view class="login_Container">
   
     
-    <image class='avatar' src="{{userInfo.avatarUrl}}"></image>
-    <text>{{userInfo.nickName}}</text>
+    <image class='avatar' src="../../images/index.jpeg" bindtap='handleTap'></image>
+    
+    <!--
     <button bindgetuserinfo="handleUserInfo" open-type="getUserInfo" style='display:{{isShow?"block":"none"}}'>开启小程序授权</button>
- 
+    
    
   <text class="userName">欢迎来到高树吧</text>
-
+-->
+<!--
   <view class='goStudy' style='display:{{isShow?"none":"block"}}'>
-    
-    <block wx:if="{{userInfos.phone!=null}}">
+     
+
+    <view  class='goStudy'>
+    <block>
         <button class="weui-btn" bindtap='handleTap'>高树学习之旅</button>
     </block>
 
+    
     <block wx:else>
       <button class="weui-btn" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">高树学习之旅</button>
+</block>
+      
 
-    </block>
+    
   </view>
-
+-->
   
 </view>

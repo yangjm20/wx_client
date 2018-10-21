@@ -1,3 +1,7 @@
+<view class="videoIndex">
+  <video wx:if="{{page}}" poster='https://www.talltree.com.cn/exercises/Cover.jpg' src="https://www.talltree.com.cn/files/index.mp4"  controls autoplay bindended="shikan" enable-progress-gesture page-gesture  ></video>
+</view>
+
 <view class="luobo">
     <swiper class="activity" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}" indicator-dots="{{indicatorDots}}" 
             autoplay="{{autoplay}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
@@ -8,6 +12,10 @@
       </block>
     </swiper>
 </view>
+
+
+
+
 <view class="hotCourse">
     <viw class="topTitle">
         <view class="left">
@@ -15,10 +23,15 @@
             <text>热门课程</text>
         </view>
     </viw>
+
+
     <view class="hotImg">
         <scroll-view scroll-x style="width:100%">
             <block wx:for="{{hotLesson}}">
-
+                           
+                <image class="item" src="../../images/hotLesson0{{index}}.png" bindtap="{{item.flag?'toLesson':''}}" data-id="{{item.id}}"></image>
+               
+              <!--
                 <block  wx:if="{{item.flag}}">
                   <view style="background-color:{{item.color}}" class="item" bindtap='toLesson' data-id="{{item.id}}">
                       
@@ -44,42 +57,61 @@
                 </view>
                 </block>
 
+
+                -->
+
             </block>
 
         </scroll-view>
     </view>
 </view>
 
-<view class="introVideo">
-    <viw class="topTitle">
-        <image src="../../images/intro@2x.png"></image>
-        <text>试看视频</text>
-    </viw>
-    <view class="hotImg">
 
-        <view wx:for="{{recommendLesson}}" wx:for-item="recommend_item" class="singleBox" bindtap='tiao' data-id='{{recommend_item.id}}' data-id2='{{recommend_item.id2}}' data-id3='{{recommend_item.id3}}'>
-           <image src="../..{{recommend_item.url}}"></image>
-           <text class="title">{{recommend_item.name}}</text>
-           <text class="subtitle"></text>
-        </view>
 
-    </view>
-</view>
 
 
 <view class="introVideo">
-    <viw class="topTitle">
-        <image src="../../images/tixi@2x.png"></image>
-        <text>精彩习题</text>
-    </viw>
-    <view class="hotImg">
 
-        <view wx:for="{{recommendLesson}}" wx:for-item="recommend_item" class="singleBox" bindtap='toExercise' data-id='{{recommend_item.id}}' data-id2='{{recommend_item.id2}}' data-id3='{{recommend_item.id3}}'>
-           <image src="../..{{recommend_item.url}}"></image>
-           <text class="title">{{recommend_item.name}}</text>
-           <text class="subtitle"></text>
-        </view>
+    <view class='video01'>
 
+      <!--
+        <viw class="topTitle">
+            <image src="../../images/videoTest.png"></image>
+            <text>试看视频</text>
+        </viw>
+      -->
+      
+      <view class="hotImg">
+
+          <view class="singleBox" bindtap='tiao' data-id='{{recommendLesson[0].id}}' data-id2='{{recommendLesson[0].id2}}' data-id3='{{recommendLesson[0].id3}}'>
+            <image src="../../images/videoTest.png"></image>
+            <text class="title">{{recommendLesson[0].name}}</text>
+            <text class="subtitle"></text>
+          </view>
+      </view>
     </view>
+
+    <view class='video01'>
+
+      <!--
+        <viw class="topTitle">
+          <image src="../../images/exerciseTest.png"></image>
+          <text>精彩习题</text>
+        </viw>
+      -->
+        <view class="hotImg">
+
+          <view class="singleBox" bindtap='toExercise' data-id='{{recommendLesson[1].id}}' data-id2='{{recommendLesson[1].id2}}' data-id3='{{recommendLesson[1].id3}}'>
+            <image src="../../images/exerciseTest.png"></image>
+            <text class="title">{{recommendLesson[1].name}}</text>
+            <text class="subtitle"></text>
+          </view>
+
+      </view>
+    </view>
+
+   
+
 </view>
+
 

@@ -1,7 +1,7 @@
 // pages/mulu/mulu.js
 var sliderWidth = 96; 
-var getUserInfoUrl ='http://localhost:3000/getUserInfo'
-const getanswerUrl = 'http://localhost:3000/getAnswer'
+var getUserInfoUrl ='https://www.talltree.com.cn/getUserInfo'
+const getanswerUrl = 'https://www.talltree.com.cn/getAnswer'
 
 Page({
 
@@ -20,6 +20,9 @@ Page({
     lessonId:0,//书
     sessionId:0,//章节
     id:-1,//具体视频
+
+    comData:[{},{},{}]
+    /*
     comData:[
       {
         lujing:"../../images/ke1@2x.png",
@@ -37,7 +40,7 @@ Page({
         subtitle:"数学知识点讲解生动"
       }
 
-    ]
+    ]*/
   },
 
   onLoad: function (options) {
@@ -156,22 +159,22 @@ Page({
 
   shikan:function(){
     console.log("视频播放完毕");
+    var that=this;
     wx.showModal({
       title: '',
       cancelText:"下次再说",
-      confirmText:"立即购买",
-      content: '试看已结束，如需继续观看，请购买此课程',
+      confirmText:"即刻答题",
+      content: '视屏播放结束，请前往答题区练习此节',
       success: function (res) {
         if (res.confirm) {
           // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
-          console.log("好的");
-          wx.navigateTo({
-            url: "/pages/buy/buy"
-          });
+          console.log(res);
+          that.toExercise();
         }
       }
     })
   },
+
   huan:function(e){
     if (this.data.isBuy[this.data.lessonId].lessonIsBuy){
       this.setData({
@@ -180,7 +183,7 @@ Page({
       })
     }else{
       wx.navigateTo({
-        url: "/pages/buy/buy"
+        url: "/pages/buy/buy?lessonId=" + this.data.lessonId
       });
     }
 
@@ -224,9 +227,10 @@ Page({
 
   wxPay:function(){  
     wx.navigateTo({
-      url: "/pages/buy/buy"
+      url: "/pages/buy/buy?lessonId=" + this.data.lessonId
     });
   },
+
   setTitle:function(e){
       wx.setNavigationBarTitle({
           title:this.data.highMath[e.currentTarget.dataset.chapter].sectionName,
@@ -244,6 +248,8 @@ Page({
       highMath
     })
   },
+
+  
 
     //让其他展开的列表收起
   packUp(data,index){

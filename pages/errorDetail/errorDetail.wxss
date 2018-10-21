@@ -124,3 +124,29 @@ page{
 }
 
 .B{color: rgb(47, 255, 186)}
+
+.weui_title{
+  background-color: rgb(226, 240, 217);
+  border-radius: 15rpx;
+
+}
+
+.weui_title_img{
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.weui_options{
+  display: flex;
+  font-size: 30rpx;
+  height: 90%;
+  line-height: 85rpx;
+  margin-top:10rpx;
+  margin-bottom: 30rpx;
+  margin-left: 20rpx;
+}
+
+.weui_optins_{
+   display: flex;
+   align-items: center;
+}

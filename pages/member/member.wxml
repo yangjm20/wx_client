@@ -1,0 +1,31 @@
+<view class="luobo">
+    <swiper class="activity" next-margin="{{nextMargin}}" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class="box">
+    <view class="title">
+        会员福利：
+    </view>
+      <view class="intro">
+
+              <text>*有效期长达五年的专属个性化答疑辅导，24小时，随问随答，为你的大学数学学习与考研数学保驾护航</text>
+              <text>*答疑辅导团队均为资深一线大学数学老师，均具有数学专业硕士或博士以上学历，具有考研辅导经验</text>
+              <text>*享受四门课程（高数上、高数下、线性代数、概率统计）300+微视频（持续更新）永久在线观看权限，包含所有考研数学知识点</text>
+              <text>*开通在线答题权限，统计得分，并可查看详细的答案解析</text>
+              <text>*记录答题历史，开通错题本功能</text>
+              <text>会员卡购买后，客服人员24小时内会主动与您联系，请保持微信在线或电话畅通！
+      </text>
+          
+          <view class="intro_4">注:会员卡只限本人使用,不得转让,一旦售出，概不退购！</view>
+
+      </view>
+    
+    
+    
+</view>

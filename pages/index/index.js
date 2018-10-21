@@ -1,20 +1,21 @@
  // pages/index/index.js
 let hotLesson = require("../../data/hotLesson.js");
 let recommendLesson = require("../../data/recommend_lesson.js");
-const getlessonUrl = "http://localhost:3000/getLesson";
-const lessonDetailUrl = "http://localhost:3000/getLessonDetail"
-const isExercisedUrl = "http://localhost:3000/getIsExercised"
-
+const getlessonUrl = "https://www.talltree.com.cn/getLesson";
+const lessonDetailUrl = "https://www.talltree.com.cn/getLessonDetail"
+const isExercisedUrl = "https://www.talltree.com.cn/getIsExercised"
 
 Page({
     /**
      * 页面的初始数据
      */
+    
     data: {
+        openAudio:false,
         imgUrls: [
-            '../../images/banner-01@2x.png',
-            '../../images/banner-01@2x.png',
-            '../../images/banner-03@2x.png'
+            '../../images/banner-01@2x.jpg',
+            '../../images/banner-02@2x.jpg',
+            '../../images/banner-03@2x.jpg'
         ],
         indicatorDots: true,
         indicatorColor: 'greenyellow',
@@ -27,7 +28,8 @@ Page({
         circular: true,
         // 热门课程数据
         hotLesson: [],
-        recommendLesson: []
+        recommendLesson: [],
+        page:true
     },
 
     /**
@@ -73,14 +75,18 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.setData({
+          page:true
+        })
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+      this.setData({
+        page: false
+      })
     },
 
     /**
@@ -140,9 +146,14 @@ Page({
     wx.navigateTo({
       url: "/pages/mulu/mulu?lessonId=" + lessonId
     });
-  }
-          
-    
+  },
 
-  
+  opendAudio:function(e){
+    console.log(e);
+    var flag = !this.data.openAudio
+    this.setData({
+      openAudio: flag
+    })
+  }
+        
 })

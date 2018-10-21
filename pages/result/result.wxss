@@ -147,8 +147,7 @@ page{
   width: 85%;
   font-size: 28rpx;
   color: rgb(141, 136, 136);
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 
 .radio-group{
@@ -161,3 +160,20 @@ page{
 }
 
 .B{color: rgb(47, 255, 186)}
+
+.img_img_width{
+  width: 100%;
+}
+
+
+.weui_optins_{
+  display: flex;
+  font-size: 30rpx;
+  margin-top:10rpx;
+  margin-left: 20rpx;
+}
+
+.bottom_content{
+   display: flex;
+   align-items: center;
+}

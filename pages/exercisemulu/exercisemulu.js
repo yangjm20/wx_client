@@ -1,8 +1,8 @@
 // pages/exercisemulu/exercisemulu.js
-const answersHisUrl ='http://localhost:3000/getAnswerHistory'
-const getanswerUrl ='http://localhost:3000/getAnswer'
-const isExercisedUrl = 'http://localhost:3000/getIsExercised'
-const lessonDetailUrl = "http://localhost:3000/getLessonDetail"
+const answersHisUrl ='https://www.talltree.com.cn/getAnswerHistory'
+const getanswerUrl ='https://www.talltree.com.cn/getAnswer'
+const isExercisedUrl = 'https://www.talltree.com.cn/getIsExercised'
+const lessonDetailUrl = "https://www.talltree.com.cn/getLessonDetail"
 
 
 Page({

@@ -1,2 +1,0 @@
-# wx_client
-wx

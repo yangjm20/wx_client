@@ -4,7 +4,9 @@ page{
 video{
     width: 100%;
     height: 422rpx;
+    object-fit: fill;
 }
+
 .intro{
     background-color: #fff;
     margin-bottom:16rpx;
@@ -17,6 +19,8 @@ video{
     flex-direction: column;
     justify-content: space-between;
 }
+
+
 .intro .title{
   display: flex;
     font-size:32rpx;
@@ -116,8 +120,8 @@ video{
     flex-direction: column;
     height: 327rpx;
     justify-content: space-between;
-    color:#A9A9A9;
-    font-size:22rpx;
+    color:rgb(80, 74, 74);
+    font-size:30rpx;
 }
 .colore{
     color:#FF547C;

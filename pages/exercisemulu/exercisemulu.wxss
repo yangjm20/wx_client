@@ -32,6 +32,7 @@ page{
   margin-left: 20rpx;
   font-size: 27rpx;
   display: flex;
+  align-items: center;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
@@ -48,9 +49,9 @@ page{
   height: 50rpx;
   line-height: 50rpx;
   margin-left: 40rpx;
-  width: 168rpx;
+  width: 175rpx;
   color: rgb(22, 95, 145);
-  font-size: 25rpx;
+  font-size: 23rpx;
   border: 1rpx solid rgb(10, 95, 121)
 }
 
@@ -58,9 +59,9 @@ page{
     height: 50rpx;
     line-height: 50rpx;
     margin-left: 40rpx;
-    width: 168rpx;
+    width: 175rpx;
     color: rgb(157, 216, 133);
-    font-size: 25rpx;
+    font-size: 23rpx;
     border: 1rpx solid rgb(157, 216, 133);
 }
 
@@ -70,7 +71,7 @@ page{
     margin-left: 40rpx;
     width: 168rpx;
     color: rgb(158, 163, 156);
-    font-size: 25rpx;
+    font-size: 23rpx;
     border: 1rpx solid rgb(141, 145, 139);
 }
 

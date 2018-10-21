@@ -1,6 +1,7 @@
 // pages/buy/buy.jsvar 
-var getPrePayId="http://localhost:3000/getPrePayId"
-var updateUserInfo = "http://localhost:3000/updateUserInfo"
+var getPrePayId ="https://www.talltree.com.cn/getPrePayId"
+var updateUserInfo = "https://www.talltree.com.cn/updateUserInfo"
+const getPhoneUrl = "https://www.talltree.com.cn/getPhone"
 
 Page({
 
@@ -18,6 +19,7 @@ Page({
       duration: 1000, 
       nextMargin:"10rpx",
       circular:true,
+      lessonId:null
   },
 
   /**
@@ -25,6 +27,9 @@ Page({
    */
   onLoad: function (options) {
   
+      this.setData({
+        lessonId:options.lessonId
+      })
   },
 
   /**
@@ -74,14 +79,61 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  sure:function(){
+  }, 
+  
+  getPhoneNumber: function (e) {
+    var that=this;
+    
+    if (e.detail.errMsg == "getPhoneNumber:fail user deny") {
+     
+      console.log(e)
+    } else {
+      console.log("phonephone")
+      let params = {
+        userId: wx.getStorageSync('openid'),//用户open_id,不一定需要
+        sessionKey: wx.getStorageSync('session_key'),//调用wx.loign接口 获取code 上传服务器获取用户open_id ,session_key
+        encryptedData: e.detail.encryptedData,//调用获取用户手机号组件，直接获取
+        iv: e.detail.iv,//调用获取用户手机号组件，直接获取
+        userType: 3//不一定需要
+      }
+      console.log(params);
 
+      wx.request({
+        url: getPhoneUrl,
+        method: 'POST',
+        data: {
+          userId: params.userId,
+          session_key: params.sessionKey,
+          encryptedData: params.encryptedData,
+          iv: params.iv
+        },
+        success: (res) => {
+          console.log(res);
+        if(res.statusCode==200){
+          wx.setStorageSync('userInfos', res.data.userInfo)
+          console.log("111")
+          this.sure();
+        }
+        return;
+          
+        }
+      })
+
+      
+
+    }
+  }
+  ,
+
+
+  sure:function(e){
+    
     wx.request({
       url: getPrePayId,
       method: 'GET',
       data: {
-        openId: wx.getStorageSync("openid")
+        openId: wx.getStorageSync("openid"),
+        lessonId:this.data.lessonId
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {

@@ -1,6 +1,6 @@
 // pages/study/study.js
 let lessons=require("../../data/list-lesson.js");
-var getUserInfoUrl = 'http://localhost:3000/getUserInfo'
+var getUserInfoUrl = 'https://www.talltree.com.cn/getUserInfo'
 Page({
 
   /**

@@ -1,7 +1,7 @@
 // pages/result/result.js
-const getScoreDetailUrl = "http://localhost:3000/getScoreDetail"
-const lessonUrl = "http://localhost:3000/getLessonDetailById"
-const errorsUrl = "http://localhost:3000/getErrorsById"
+const getScoreDetailUrl = "https://www.talltree.com.cn/getScoreDetail"
+const lessonUrl = "https://www.talltree.com.cn/getLessonDetailById"
+const errorsUrl = "https://www.talltree.com.cn/getErrorsById"
 
 Page({
 
@@ -14,7 +14,8 @@ Page({
     answerOptions:[],
     userAnswerOptions:[],
     answers:[],
-    errors:[]
+    errors:[],
+    exercises:[]
   },
 
   /**
@@ -35,7 +36,8 @@ Page({
             answerOptions: res.data.answerOps[0].userAnswerAndAnswer.answerOptions,
             userAnswerOptions: res.data.answerOps[0].userAnswerAndAnswer.userAnswerOptions,
             errors: res.data.errors,
-            activeIndex:res.data.errors.errorIndex[0]
+            activeIndex:res.data.errors.errorIndex[0],
+            exercises:res.data.exercises.examinations
           })
          
         }

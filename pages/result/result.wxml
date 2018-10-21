@@ -46,7 +46,7 @@
           <view class="middle_bottom">
               <text class="middle_bottom_title">{{tabs[activeIndex]}}解析</text>
               <text class="middle_bottom_content">解析:</text>
-              <image mode='widthFix' src="{{answers[activeIndex].analysis}}"></image>
+              <image class="img_img_width" mode='widthFix' src="{{answers[activeIndex].analysis}}"></image>
           </view>
           
       
@@ -60,13 +60,18 @@
         <view hidden="{{activeIndex != index}}">
             <view class='bottom_title'>
               
-              <image mode='widthFix' src="{{item.questions[0].question}}"></image>
+              <image class="img_img_width" mode='widthFix' src="{{item.questions[0].question}}"></image>
             </view>
 
             <radio-group class="radio-group">
             
+            
               <radio class="weui_optins_" wx:for="{{item.questions[0].options}}" wx:for-index="index" value="{{index}}" checked="{{item.checked}}">
-                <view class='bottom_content'><image mode='widthFix' src="{{item.option}}"> </image></view>
+
+                <view class='bottom_content'>
+                  <text class="weui_options_op"></text>
+                  <image mode='widthFix' src="{{item.option}}"> </image>
+                </view>
               </radio>
 
             </radio-group>

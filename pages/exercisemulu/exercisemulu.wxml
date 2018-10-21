@@ -20,8 +20,6 @@
                 </view>
               
               
-              
-
                 <block wx:if="{{(itemBody.isUploadExercise&&itemBody.isUploadAnswer) && !isExercised[lessonId].sessions[sessionIdx].vodies[idx].isExercised}}">
                   <button data-idx="{{idx}}" data-lessonId="{{}}" data-sessionIdx="{{sessionIdx}}" class="content_section_vodie_ex {{(idx == id &&sessionIdx==sessionId&&flag)? 'colore' : 'a2'}}" bindtap='huan'>练习</button>
                 </block>

@@ -1,5 +1,5 @@
 
-var getUserInfoUrl ="http://localhost:3000/getUserInfo"
+var getUserInfoUrl ="https://www.talltree.com.cn/getUserInfo"
  
 // pages/kecheng/kecheng.js
 //let datas = require('../../data/list-lesson.js');
